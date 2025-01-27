@@ -1,0 +1,5 @@
+<p [hidden]="isHidden">{{ name }} works!</p>
+<button class="btn btn-danger" (click)="showHide()">Show / Hide</button>
+<input #inputMessage type="text" class="form-control" (change)="setMessage(inputMessage.value)">
+<p>Le contenu actuel de l'input est : {{ message }}</p>
+<app-second/>
