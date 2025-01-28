@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Cv } from '../model/cv';
 import { LoggerService } from 'src/app/services/logger.service';
 import { SayHelloService } from 'src/app/services/say-hello.service';
+import { TodoService } from 'src/app/todo/service/todo.service';
 
 @Component({
   selector: 'app-cv',
@@ -76,6 +77,7 @@ export class CvComponent {
       18
     ),
   ];
+  todoService = inject(TodoService);
   // sayHelloService = new SayHelloService();
   constructor(
     private loggerService: LoggerService,
