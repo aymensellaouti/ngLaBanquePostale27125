@@ -19,6 +19,10 @@ import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
+import { TodoComponent } from './todo/todo/todo.component';
+import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
+import { EmbaucheComponent } from './cv/embauche/embauche.component';
+import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { RainbowDirective } from './directives/rainbow.directive';
     NgstyleComponent,
     MiniWordComponent,
     HighlightDirective,
-    RainbowDirective
+    RainbowDirective,
+    TodoComponent,
+    DetailsCvComponent,
+    EmbaucheComponent,
+    WeekTodoComponent
   ],
   imports: [
     BrowserModule,
