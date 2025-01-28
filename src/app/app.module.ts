@@ -32,6 +32,9 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { LoggerService } from './services/logger.service';
 import { SayHelloService } from './services/say-hello.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NF404Component } from './components/nf404/nf404.component';
+import { TestFormComponent } from './form/test-form/test-form.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     Btc2UsdPipe,
     DefaultImagePipe,
     NavbarComponent,
+    NF404Component,
+    TestFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
