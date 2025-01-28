@@ -13,7 +13,7 @@ export class ItemCvComponent {
   cv!: Cv;
   @Output()
   selectCv = new EventEmitter<Cv>();
-
+  @Input() size = 50;
   onSelectCv() {
     this.selectCv.emit(this.cv);
   }
