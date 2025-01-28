@@ -31,6 +31,7 @@ import { Btc2UsdPipe } from './pipes/btc2-usd.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { LoggerService } from './services/logger.service';
 import { SayHelloService } from './services/say-hello.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { SayHelloService } from './services/say-hello.service';
     WeekTodoComponent,
     Btc2UsdPipe,
     DefaultImagePipe,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
