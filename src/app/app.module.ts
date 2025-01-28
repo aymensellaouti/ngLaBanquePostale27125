@@ -25,11 +25,13 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 import { Btc2UsdPipe } from './pipes/btc2-usd.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { LoggerService } from './services/logger.service';
+import { SayHelloService } from './services/say-hello.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
     // j'ai un nouveau composant qui m'appartien et c'est le firstComponent
+    AppComponent,
     FirstComponent,
     SecondComponent,
     ColorComponent,
@@ -50,14 +52,10 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
     EmbaucheComponent,
     WeekTodoComponent,
     Btc2UsdPipe,
-    DefaultImagePipe
+    DefaultImagePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

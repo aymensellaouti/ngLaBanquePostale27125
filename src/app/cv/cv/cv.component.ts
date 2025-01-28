@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Cv } from '../model/cv';
+import { LoggerService } from 'src/app/services/logger.service';
+import { SayHelloService } from 'src/app/services/say-hello.service';
 
 @Component({
   selector: 'app-cv',
@@ -74,4 +76,12 @@ export class CvComponent {
       18
     ),
   ];
+  // sayHelloService = new SayHelloService();
+  constructor(
+    private loggerService: LoggerService,
+    private sayHelloService: SayHelloService,
+  ) {
+    this.loggerService.logger('cc je suis le cvComponent :D');
+    this.sayHelloService.hello();
+  }
 }
