@@ -24,6 +24,7 @@ import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 import { Btc2UsdPipe } from './pipes/btc2-usd.pipe';
+import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { Btc2UsdPipe } from './pipes/btc2-usd.pipe';
     DetailsCvComponent,
     EmbaucheComponent,
     WeekTodoComponent,
-    Btc2UsdPipe
+    Btc2UsdPipe,
+    DefaultImagePipe
   ],
   imports: [
     BrowserModule,
