@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-second',
@@ -7,4 +8,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   `,
   styles: [``],
 })
-export class SecondComponent {}
+export class SecondComponent {
+  acr = inject(ActivatedRoute);
+}
