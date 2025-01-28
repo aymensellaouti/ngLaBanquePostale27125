@@ -52,7 +52,7 @@ export class CvComponent {
       'Mathieu',
       'dev',
       '345',
-      'rotating_card_profile2.png',
+      '',
       18
     ),
     new Cv(
@@ -61,7 +61,7 @@ export class CvComponent {
       'Cédric',
       'dev',
       '345',
-      'rotating_card_profile3.png',
+      '               ',
       18
     ),
     new Cv(

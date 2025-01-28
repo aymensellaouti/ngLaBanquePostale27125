@@ -23,6 +23,7 @@ import { TodoComponent } from './todo/todo/todo.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
+import { Btc2UsdPipe } from './pipes/btc2-usd.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
     TodoComponent,
     DetailsCvComponent,
     EmbaucheComponent,
-    WeekTodoComponent
+    WeekTodoComponent,
+    Btc2UsdPipe
   ],
   imports: [
     BrowserModule,
