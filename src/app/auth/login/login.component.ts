@@ -4,11 +4,15 @@ import { Credentials } from '../dto/credentials.dto';
 import { APP_ROUTES } from 'src/app/config/app-routes.config';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css'],
+    standalone: true,
+    imports: [FormsModule],
 })
 export class LoginComponent {
   authService = inject(AuthService);

@@ -8,8 +8,8 @@ describe('CardCvComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CardCvComponent]
-    });
+    imports: [CardCvComponent]
+});
     fixture = TestBed.createComponent(CardCvComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

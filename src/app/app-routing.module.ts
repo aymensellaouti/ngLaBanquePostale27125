@@ -15,7 +15,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
 import { authGuard } from './auth/auth.guard';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
@@ -46,10 +46,3 @@ const routes: Routes = [
     component: NF404Component,
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  // API du module
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

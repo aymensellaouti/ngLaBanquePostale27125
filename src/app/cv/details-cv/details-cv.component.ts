@@ -5,10 +5,13 @@ import { CvService } from "../services/cv.service";
 import { APP_ROUTES } from "src/app/config/app-routes.config";
 import { AuthService } from "src/app/auth/service/auth.service";
 
+
 @Component({
-  selector: 'app-details-cv',
-  templateUrl: './details-cv.component.html',
-  styleUrls: ['./details-cv.component.css'],
+    selector: 'app-details-cv',
+    templateUrl: './details-cv.component.html',
+    styleUrls: ['./details-cv.component.css'],
+    standalone: true,
+    imports: [],
 })
 export class DetailsCvComponent {
   cv: Cv | null = null;

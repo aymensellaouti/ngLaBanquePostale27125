@@ -5,7 +5,8 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
  * bordure de l'input de type texte ciblé
  */
 @Directive({
-  selector: 'input[appRainbow][type=text]'
+    selector: 'input[appRainbow][type=text]',
+    standalone: true
 })
 export class RainbowDirective {
   // Quellet propriétés je veux gérer

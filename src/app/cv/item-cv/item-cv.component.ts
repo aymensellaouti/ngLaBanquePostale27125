@@ -1,11 +1,15 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { Cv } from '../model/cv';
 import { CvService } from '../services/cv.service';
+import { NgStyle } from '@angular/common';
+import { DefaultImagePipe } from '../pipes/default-image.pipe';
 
 @Component({
-  selector: 'app-item-cv',
-  templateUrl: './item-cv.component.html',
-  styleUrls: ['./item-cv.component.css'],
+    selector: 'app-item-cv',
+    templateUrl: './item-cv.component.html',
+    styleUrls: ['./item-cv.component.css'],
+    standalone: true,
+    imports: [NgStyle, DefaultImagePipe],
 })
 export class ItemCvComponent {
   @Input({

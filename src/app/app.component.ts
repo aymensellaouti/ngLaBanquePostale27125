@@ -4,9 +4,10 @@ import { LoggerInterface, LoggerProviderToken } from './provider tokens/logger.t
 import { LoggerService } from './services/logger.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: true,
 })
 export class AppComponent {
   title = 'ngLaBanquePostale6125';

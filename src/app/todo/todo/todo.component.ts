@@ -5,11 +5,15 @@ import { Todo } from "../model/todo";
 import { CvService } from "src/app/cv/services/cv.service";
 import { ToastrService } from "ngx-toastr";
 
+import { FormsModule } from "@angular/forms";
+
 @Component({
-  selector: 'app-todo',
-  templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css'],
-  providers: [TodoService]
+    selector: 'app-todo',
+    templateUrl: './todo.component.html',
+    styleUrls: ['./todo.component.css'],
+    providers: [TodoService],
+    standalone: true,
+    imports: [FormsModule]
 })
 export class TodoComponent {
   todoService = inject(TodoService);

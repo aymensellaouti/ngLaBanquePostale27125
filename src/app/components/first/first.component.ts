@@ -1,9 +1,18 @@
 import { Component } from '@angular/core';
+import { RainbowDirective } from '../../directives/rainbow.directive';
+import { HighlightDirective } from '../../directives/highlight.directive';
+import { SecondComponent } from '../second/second.component';
 
 @Component({
-  selector: 'app-first',
-  templateUrl: './first.component.html',
-  styleUrls: ['./first.component.css'],
+    selector: 'app-first',
+    templateUrl: './first.component.html',
+    styleUrls: ['./first.component.css'],
+    standalone: true,
+    imports: [
+        RainbowDirective,
+        HighlightDirective,
+        SecondComponent,
+    ],
 })
 export class FirstComponent {
   name = 'aymen';
