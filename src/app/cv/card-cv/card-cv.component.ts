@@ -4,13 +4,14 @@ import { EmbaucheService } from '../services/embauche.service';
 import { ToastrService } from 'ngx-toastr';
 
 import { DefaultImagePipe } from '../pipes/default-image.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-card-cv',
     templateUrl: './card-cv.component.html',
     styleUrls: ['./card-cv.component.css'],
     standalone: true,
-    imports: [DefaultImagePipe]
+    imports: [DefaultImagePipe, RouterLink]
 })
 export class CardCvComponent {
   @Input()

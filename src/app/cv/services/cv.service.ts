@@ -1,4 +1,4 @@
-import {  inject, Injectable } from '@angular/core';
+import {  inject, Injectable, signal } from '@angular/core';
 import { Cv } from '../model/cv';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -74,6 +74,10 @@ export class CvService {
    * cv1, cv5, cv1, cv2, cv10 .....
    */
   selectedCv$: Observable<Cv> = this.selectedCvSubject$.asObservable();
+
+  private selectCvSignal = signal<Cv | null>(null);
+
+  selectedCv = this.selectCvSignal.asReadonly();
   // get selectedCv$() {
   //   return this.selectedCvSubject$.asObservable();
   // }
@@ -144,6 +148,7 @@ export class CvService {
    * @param cv:Cv , c'est le cv sélectionné
    */
   selectCv(cv: Cv) {
-    this.selectedCvSubject$.next(cv);
+    //this.selectedCvSubject$.next(cv);
+    this.selectCvSignal.set(cv);
   }
 }

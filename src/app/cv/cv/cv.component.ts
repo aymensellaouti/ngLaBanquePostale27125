@@ -30,6 +30,7 @@ export class CvComponent {
 
   cvService = inject(CvService);
   selectedCv$: Observable<Cv> = this.cvService.selectedCv$;
+  selectedCv = this.cvService.selectedCv;
   cvs: Cv[] = [];
   todoService = inject(TodoService);
   // sayHelloService = new SayHelloService();
