@@ -1,8 +1,10 @@
 import {  inject, Injectable } from '@angular/core';
 import { Cv } from '../model/cv';
 import { Observable, Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { APP_API } from 'src/app/config/app-api.config';
+import { APP_CONST } from 'src/app/config/app-constantes.config';
+import { AuthService } from 'src/app/auth/service/auth.service';
 
 
 @Injectable({
@@ -60,6 +62,7 @@ export class CvService {
     ),
   ];
   http = inject(HttpClient);
+  authService = inject(AuthService);
   /**
    * Le générateur du flux des cvs sélectionnés
    */

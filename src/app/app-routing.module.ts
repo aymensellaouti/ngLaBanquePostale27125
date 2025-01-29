@@ -13,6 +13,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { authGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -21,7 +22,11 @@ const routes: Routes = [
     children: [
       { path: APP_ROUTES.login, component: LoginComponent },
       { path: APP_ROUTES.cv, component: CvComponent },
-      { path: APP_ROUTES.cv + 'add', component: AddCvComponent },
+      {
+        path: APP_ROUTES.cv + '/add',
+        component: AddCvComponent,
+        canActivate: [authGuard],
+      },
       { path: APP_ROUTES.cv + '/:id', component: DetailsCvComponent },
       { path: 'todo', component: TodoComponent },
       { path: 'word', component: MiniWordComponent },
@@ -34,7 +39,7 @@ const routes: Routes = [
     children: [
       // j'accepte toutes routes avec un segment
       { path: ':quelqueChose', component: SecondComponent },
-    ]
+    ],
   },
   {
     path: '**',

@@ -38,6 +38,10 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { TestOnservableComponent } from './rxjs/test-onservable/test-onservable.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { AuthInterceptorProvider } from './auth/interceptors/auth.interceptor';
+import { LoggerProviderToken } from './provider tokens/logger.token';
+import { LoggerService } from './services/logger.service';
+import { Logger2Service } from './services/logger2.service';
 
 @NgModule({
   declarations: [
@@ -71,7 +75,7 @@ import { AddCvComponent } from './cv/add-cv/add-cv.component';
     LayoutComponent,
     AdminComponent,
     TestOnservableComponent,
-    AddCvComponent
+    AddCvComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,9 +83,21 @@ import { AddCvComponent } from './cv/add-cv/add-cv.component';
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    AuthInterceptorProvider,
+    {
+      provide: LoggerProviderToken,
+      useClass: LoggerService,
+      multi: true
+    },
+    {
+      provide: LoggerProviderToken,
+      useClass: Logger2Service,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

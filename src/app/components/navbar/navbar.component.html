@@ -30,6 +30,7 @@
           >Cv</a
         >
         <a
+         *ngIf="authService.isAuthenticated()"
           class="nav-link"
           [routerLink]="['cv', 'add']"
           routerLinkActive="active text-primary"
@@ -54,10 +55,17 @@
           >color
         </a>
         <a
+          *ngIf="!authService.isAuthenticated()"
           class="nav-link"
           [routerLink]="['login']"
           routerLinkActive="active text-primary"
           >Login
+        </a>
+        <a
+          *ngIf="authService.isAuthenticated()"
+          class="nav-link"
+          (click)="logout()"
+          >Logout
         </a>
       </div>
     </div>
