@@ -26,15 +26,18 @@ import { Btc2UsdPipe } from '../../pipes/btc2-usd.pipe';
     ],
 })
 export class CvComponent {
+  private sayHelloService = inject(SayHelloService);
+
   cvService = inject(CvService);
   selectedCv$: Observable<Cv> = this.cvService.selectedCv$;
   cvs: Cv[] = [];
   todoService = inject(TodoService);
   // sayHelloService = new SayHelloService();
   toastr = inject(ToastrService);
-  constructor(
-    private sayHelloService: SayHelloService
-  ) {
+
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+  constructor() {
     this.toastr.info('cc je suis le cvComponent :D');
     this.sayHelloService.hello();
     this.cvService.getCvs().subscribe({
