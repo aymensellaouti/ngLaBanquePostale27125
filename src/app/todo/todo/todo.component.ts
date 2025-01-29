@@ -23,6 +23,12 @@ export class TodoComponent {
     .subscribe(
       (cv) => this.toastr.warning('on t as sélectionné on t a sélectionné')
     )
+    this.todoService.getTodosFromApi().subscribe({
+      next: todos => {
+        console.log({todos});
+
+      }
+    })
   }
 
   addTodo() {

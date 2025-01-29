@@ -69,7 +69,9 @@ export class CvService {
    * cv1, cv5, cv1, cv2, cv10 .....
    */
   selectedCv$: Observable<Cv> = this.selectedCvSubject$.asObservable();
-
+  // get selectedCv$() {
+  //   return this.selectedCvSubject$.asObservable();
+  // }
   /**
    * Retourne la liste des cvs
    * @returns Cv[]
