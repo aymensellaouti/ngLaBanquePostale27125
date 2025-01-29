@@ -37,6 +37,7 @@ import { TestFormComponent } from './form/test-form/test-form.component';
 import { LoginComponent } from './auth/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { TestOnservableComponent } from './rxjs/test-onservable/test-onservable.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { AdminComponent } from './components/admin/admin.component';
     LoginComponent,
     LayoutComponent,
     AdminComponent,
+    TestOnservableComponent,
   ],
   imports: [
     BrowserModule,
