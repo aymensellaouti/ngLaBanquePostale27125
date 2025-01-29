@@ -30,8 +30,6 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 import { Btc2UsdPipe } from './pipes/btc2-usd.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
-import { LoggerService } from './services/logger.service';
-import { SayHelloService } from './services/say-hello.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NF404Component } from './components/nf404/nf404.component';
 import { TestFormComponent } from './form/test-form/test-form.component';
@@ -39,6 +37,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { TestOnservableComponent } from './rxjs/test-onservable/test-onservable.component';
+import { AddCvComponent } from './cv/add-cv/add-cv.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +71,7 @@ import { TestOnservableComponent } from './rxjs/test-onservable/test-onservable.
     LayoutComponent,
     AdminComponent,
     TestOnservableComponent,
+    AddCvComponent
   ],
   imports: [
     BrowserModule,
