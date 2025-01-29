@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngLaBanquePostale6125:build:production"
+              "buildTarget": "ngLaBanquePostale6125:build:production"
             },
             "development": {
-              "browserTarget": "ngLaBanquePostale6125:build:development"
+              "buildTarget": "ngLaBanquePostale6125:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngLaBanquePostale6125:build"
+            "buildTarget": "ngLaBanquePostale6125:build"
           }
         },
         "test": {
