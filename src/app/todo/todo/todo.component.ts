@@ -1,6 +1,9 @@
 import { Component, inject } from "@angular/core";
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TodoService } from "../service/todo.service";
 import { Todo } from "../model/todo";
+import { CvService } from "src/app/cv/services/cv.service";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: 'app-todo',
@@ -10,9 +13,17 @@ import { Todo } from "../model/todo";
 })
 export class TodoComponent {
   todoService = inject(TodoService);
+  cvService = inject(CvService);
+  toastr = inject(ToastrService)
   todos: Todo[] = this.todoService.getTodos();
   todo = new Todo();
-  constructor() {}
+  constructor() {
+    this.cvService.selectedCv$
+    .pipe(takeUntilDestroyed())
+    .subscribe(
+      (cv) => this.toastr.warning('on t as sélectionné on t a sélectionné')
+    )
+  }
 
   addTodo() {
     this.todoService.addTodo(this.todo);

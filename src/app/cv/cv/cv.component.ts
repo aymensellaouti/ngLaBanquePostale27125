@@ -4,6 +4,7 @@ import { SayHelloService } from 'src/app/services/say-hello.service';
 import { TodoService } from 'src/app/todo/service/todo.service';
 import { ToastrService } from 'ngx-toastr';
 import { CvService } from '../services/cv.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cv',
@@ -11,8 +12,8 @@ import { CvService } from '../services/cv.service';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent {
-  selectedCv: Cv | null = null;
   cvService = inject(CvService);
+  selectedCv$: Observable<Cv> = this.cvService.selectedCv$;
   cvs: Cv[] = this.cvService.getCvs();
   todoService = inject(TodoService);
   // sayHelloService = new SayHelloService();
