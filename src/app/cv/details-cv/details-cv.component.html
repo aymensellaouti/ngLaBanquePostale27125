@@ -1,5 +1,5 @@
 <!-- <app-autocomplete /> -->
-@if (cv) {
+@if (cv(); as cv) {
   <div class="d-flex justify-content-center">
     <div class="col-lg-8 push-lg-4">
       <div class="tab-content p-b-3">
@@ -37,7 +37,7 @@
                 <div class="d-flex justify-content-center">
                   @if (authService.isAuthenticated()) {
                     <button
-                      (click)="deleteCv()"
+                      (click)="deleteCv(cv.id)"
                       class="btn btn-danger">
                       Delete
                     </button>
