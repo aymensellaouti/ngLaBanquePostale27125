@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 export class CvComponent {
   cvService = inject(CvService);
   selectedCv$: Observable<Cv> = this.cvService.selectedCv$;
-  cvs: Cv[] = this.cvService.getCvs();
+  cvs: Cv[] = [];
   todoService = inject(TodoService);
   // sayHelloService = new SayHelloService();
   toastr = inject(ToastrService);
@@ -23,5 +23,12 @@ export class CvComponent {
   ) {
     this.toastr.info('cc je suis le cvComponent :D');
     this.sayHelloService.hello();
+    this.cvService.getCvs().subscribe({
+      next: cvs => this.cvs = cvs,
+      error: (e) => {
+        this.cvs = this.cvService.getFakeCvs();
+        this.toastr.error(`LEs données sont fictives, merci de contacter l'admin`)
+      }
+    });
   }
 }

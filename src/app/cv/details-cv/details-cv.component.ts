@@ -17,15 +17,27 @@ export class DetailsCvComponent {
 
   constructor() {
     const id = this.acr.snapshot.params['id'];
-    this.cv = this.cvService.findCvById(id);
-
-    if (!this.cv) this.router.navigate([APP_ROUTES.cv]);
+    this.cvService.getCvById(id).subscribe({
+      next: (cv) => {
+        this.cv = cv
+      },
+      error: (e) => {
+         this.router.navigate([APP_ROUTES.cv]);
+      }
+    });
   }
 
   deleteCv() {
     if(this.cv) {
-      this.cvService.deleteCv(this.cv)
-      this.router.navigate([APP_ROUTES.cv]);
+      this.cvService.deleteCvById(this.cv.id).subscribe({
+        next: () => {
+          this.router.navigate([APP_ROUTES.cv]);
+        },
+        error: (e) => {
+          console.log({e});
+        }
+      })
+
     }
   }
 }

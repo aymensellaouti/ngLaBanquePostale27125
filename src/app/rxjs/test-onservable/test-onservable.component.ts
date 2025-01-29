@@ -46,6 +46,7 @@ export class TestOnservableComponent {
       complete: () => {
         this.toastr.error(' It s Over');
       },
+      error: (e) => {}
     });
 
     // }, 3000)
