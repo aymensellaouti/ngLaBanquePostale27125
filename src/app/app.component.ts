@@ -3,13 +3,14 @@ import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { LoggerInterface, LoggerProviderToken } from './provider tokens/logger.token';
 import { LoggerService } from './services/logger.service';
 import { SommeComponent } from "./signals/somme/somme.component";
+import { HighlightDirective } from './directives/highlight.directive';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     standalone: true,
-    imports: [RouterOutlet, SommeComponent]
+    imports: [RouterOutlet, SommeComponent, HighlightDirective]
 })
 export class AppComponent {
   title = 'ngLaBanquePostale6125';
