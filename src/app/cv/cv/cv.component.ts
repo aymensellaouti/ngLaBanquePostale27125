@@ -15,15 +15,14 @@ import { Btc2UsdPipe } from '../../pipes/btc2-usd.pipe';
     selector: 'app-cv',
     templateUrl: './cv.component.html',
     styleUrls: ['./cv.component.css'],
-    standalone: true,
     imports: [
         ListComponent,
         CardCvComponent,
         EmbaucheComponent,
-        AsyncPipe,
         CurrencyPipe,
         Btc2UsdPipe,
     ],
+    standalone: true
 })
 export class CvComponent {
   private sayHelloService = inject(SayHelloService);

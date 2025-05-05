@@ -1,16 +1,29 @@
-import { afterNextRender, afterRender, AfterRenderPhase, Directive, HostBinding, HostListener, input, Input, OnInit } from '@angular/core';
+import { afterNextRender, afterRender, AfterRenderPhase, Directive, HostBinding, HostListener, input, Input, InputSignal, linkedSignal, OnInit, signal } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]',
   standalone: true,
+  host: {
+    '[style.backgroundColor]': 'this.color()',
+    '(mouseenter)':'this.onMouseEnter()',
+    '(mouseleave)':'this.onMouseLeave()',
+  }
 })
 export class HighlightDirective {
-  in = input('yellow');
+  in: InputSignal<string> = input('yellow');
   out = input('red');
-
+  color = linkedSignal(() => this.out());
   // Quellet propriétés je veux gérer
-  @HostBinding('style.backgroundColor')
-  bgc = this.out();
+  // @HostBinding('style.backgroundColor')
+  // bgc2 = signal('');
+  // ngOnInit(): void {
+  //   //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+  //   //Add 'implements OnInit' to the class.
+  //   this.bgc2.set(this.out());
+  // }
+  // get bgc() {
+  //   return this.color();
+  // };
   constructor() {
     // afterRender(() =>{
     //   console.log('in AfterRender');
@@ -22,13 +35,15 @@ export class HighlightDirective {
   }
 
   // Quel comportement faire
-  @HostListener('mouseenter')
+  // @HostListener('mouseenter')
   onMouseEnter() {
-    this.bgc = this.in();
+    // this.bgc2.set(this.in());
+    this.color.set(this.in());
   }
-  @HostListener('mouseleave')
+  // @HostListener('mouseleave')
   // @HostListener('focus')
   onMouseLeave() {
-    this.bgc = this.out();
+    // this.bgc2.set(this.out());
+    this.color.set(this.out());
   }
 }

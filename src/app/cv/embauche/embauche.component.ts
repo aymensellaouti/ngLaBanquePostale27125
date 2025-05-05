@@ -8,10 +8,9 @@ import { ItemCvComponent } from '../item-cv/item-cv.component';
     selector: 'app-embauche',
     templateUrl: './embauche.component.html',
     styleUrls: ['./embauche.component.css'],
-    standalone: true,
     imports: [
-    ItemCvComponent
-],
+        ItemCvComponent
+    ]
 })
 export class EmbaucheComponent {
   embaucheService = inject(EmbaucheService);

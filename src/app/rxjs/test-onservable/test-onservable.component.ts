@@ -7,7 +7,6 @@ import { AsyncPipe } from '@angular/common';
     selector: 'app-test-onservable',
     templateUrl: './test-onservable.component.html',
     styleUrls: ['./test-onservable.component.css'],
-    standalone: true,
     imports: [AsyncPipe]
 })
 export class TestOnservableComponent {

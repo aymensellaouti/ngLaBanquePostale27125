@@ -1,5 +1,20 @@
-<app-somme />
-<div appHighlight>test</div>
-<div appHighlight [in]="'lightblue'" [out]="'green'">test</div>
+
+<!-- <div appHighlight>test</div>
+<div appHighlight [in]="'lightblue'" [out]="'green'">test</div> -->
+
+<!-- <app-card>
+  <p #cardTitle>Aymen Sellaouti</p>
+  <p ngProjectAs="[title]">my first card</p>
+  <div subTitle>trying content projection</div>
+  <div content>
+    <img src="assets/images/as.jpg" alt="aymen">
+  </div>
+</app-card> -->
+
+<app-card>
+  <div slot="title">Hello</div>
+  <div slot="content">Angular</div>
+</app-card>
+
 <router-outlet></router-outlet>
 

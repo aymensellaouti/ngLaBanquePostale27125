@@ -7,12 +7,11 @@ import { SecondComponent } from '../second/second.component';
     selector: 'app-first',
     templateUrl: './first.component.html',
     styleUrls: ['./first.component.css'],
-    standalone: true,
     imports: [
         RainbowDirective,
         HighlightDirective,
         SecondComponent,
-    ],
+    ]
 })
 export class FirstComponent {
   name = 'aymen';

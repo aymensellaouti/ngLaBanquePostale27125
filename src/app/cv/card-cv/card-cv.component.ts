@@ -10,7 +10,6 @@ import { RouterLink } from '@angular/router';
     selector: 'app-card-cv',
     templateUrl: './card-cv.component.html',
     styleUrls: ['./card-cv.component.css'],
-    standalone: true,
     imports: [DefaultImagePipe, RouterLink]
 })
 export class CardCvComponent {

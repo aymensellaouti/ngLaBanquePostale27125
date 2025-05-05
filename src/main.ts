@@ -6,7 +6,6 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app/app-routing.module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app/app.component';
@@ -15,7 +14,7 @@ import { importProvidersFrom } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, FormsModule, // required animations module
+        importProvidersFrom(BrowserModule, // required animations module
         ToastrModule.forRoot()),
         AuthInterceptorProvider,
         {

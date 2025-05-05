@@ -5,8 +5,7 @@ import { TodoComponent } from '../todo/todo.component';
     selector: 'app-week-todo',
     templateUrl: './week-todo.component.html',
     styleUrls: ['./week-todo.component.css'],
-    standalone: true,
-    imports: [TodoComponent],
+    imports: [TodoComponent]
 })
 export class WeekTodoComponent {
   constructor() {

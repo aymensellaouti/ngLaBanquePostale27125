@@ -1,0 +1,30 @@
+<!-- <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+        @if (title()) {
+        {{title()?.nativeElement.innerHTML}}
+        } @else {
+        Untitled Card
+        }
+        <ng-content select="[title]"></ng-content>
+    </h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">
+      <ng-content select="[subTitle]">Card Subtitle</ng-content>
+    </h6>
+    <ng-content select="[content]"></ng-content>
+  </div>
+</div> -->
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+        <ng-content select="[slot=title]"></ng-content>
+    </h5>
+    <hr>
+    <h6 class="card-subtitle mb-2 text-body-secondary">
+      <ng-content select="[slot=subTitle]">Card Subtitle</ng-content>
+    </h6>
+    <hr>
+    <ng-content select="[slot=content]"></ng-content>
+  </div>
+</div>

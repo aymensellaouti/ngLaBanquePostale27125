@@ -5,8 +5,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-rotating-card',
     templateUrl: './rotating-card.component.html',
     styleUrls: ['./rotating-card.component.css'],
-    standalone: true,
-    imports: [FormsModule],
+    imports: [FormsModule]
 })
 export class RotatingCardComponent {
   name = 'sellaouti';

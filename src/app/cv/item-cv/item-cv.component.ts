@@ -8,8 +8,7 @@ import { DefaultImagePipe } from '../pipes/default-image.pipe';
     selector: 'app-item-cv',
     templateUrl: './item-cv.component.html',
     styleUrls: ['./item-cv.component.css'],
-    standalone: true,
-    imports: [NgStyle, DefaultImagePipe],
+    imports: [NgStyle, DefaultImagePipe]
 })
 export class ItemCvComponent {
   @Input({

@@ -4,13 +4,14 @@ import { LoggerInterface, LoggerProviderToken } from './provider tokens/logger.t
 import { LoggerService } from './services/logger.service';
 import { SommeComponent } from "./signals/somme/somme.component";
 import { HighlightDirective } from './directives/highlight.directive';
+import { CardComponent } from './components/card/card.component';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    standalone: true,
-    imports: [RouterOutlet, SommeComponent, HighlightDirective]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  imports: [RouterOutlet, HighlightDirective, CardComponent],
+  standalone: true,
 })
 export class AppComponent {
   title = 'ngLaBanquePostale6125';
@@ -20,8 +21,6 @@ export class AppComponent {
   hideMenu = this.acr.snapshot.data['hideMenu'] ?? false;
   constructor() {
     //console.log(this.acr.snapshot);
-    this.loggerService.forEach(
-      loggerService => loggerService.logger('cc')
-    );
+    this.loggerService.forEach((loggerService) => loggerService.logger('cc'));
   }
 }

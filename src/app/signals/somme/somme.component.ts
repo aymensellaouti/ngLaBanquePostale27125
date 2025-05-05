@@ -2,11 +2,10 @@ import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-somme',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './somme.component.html',
-  styleUrl: './somme.component.css'
+    selector: 'app-somme',
+    imports: [FormsModule],
+    templateUrl: './somme.component.html',
+    styleUrl: './somme.component.css'
 })
 export class SommeComponent {
   x = signal(5);

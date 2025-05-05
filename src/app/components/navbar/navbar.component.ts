@@ -8,7 +8,6 @@ import { APP_ROUTES } from 'src/app/config/app-routes.config';
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.css'],
-    standalone: true,
     imports: [RouterLink, RouterLinkActive]
 })
 export class NavbarComponent {
