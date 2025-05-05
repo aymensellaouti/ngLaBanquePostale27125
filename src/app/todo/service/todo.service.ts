@@ -1,4 +1,4 @@
-import { inject, Injectable } from "@angular/core";
+import { inject, Injectable, signal, WritableSignal } from "@angular/core";
 import { Todo } from "../model/todo";
 import { LoggerService } from "src/app/services/logger.service";
 import { HttpClient } from "@angular/common/http";
@@ -10,7 +10,7 @@ import { APP_API } from "src/app/config/app-api.config";
   providedIn: 'root',
 })
 export class TodoService {
-  private todos: Todo[] = [];
+  private todos = signal<Todo[]>([]);
   http = inject(HttpClient);
 
   /**
@@ -20,7 +20,7 @@ export class TodoService {
    */
 
   loggerService = inject(LoggerService);
-  getTodos(): Todo[] {
+  getTodos(): WritableSignal<Todo[]> {
     return this.todos;
   }
 
@@ -31,7 +31,7 @@ export class TodoService {
    *
    */
   addTodo(todo: Todo): void {
-    this.todos.push(todo);
+    this.todos.update((todos) => [...todos, todo]);
   }
 
   /**
@@ -40,13 +40,16 @@ export class TodoService {
    * @param todo: Todo
    * @returns boolean
    */
-  deleteTodo(todo: Todo): boolean {
-    const index = this.todos.indexOf(todo);
-    if (index != -1) {
-      this.todos.splice(index, 1);
-      return true;
-    }
-    return false;
+  deleteTodo(todo: Todo): void {
+    this.todos.update((todos) =>
+      todos.filter((actualTodo) => actualTodo != todo)
+    );
+    // const index = this.todos.indexOf(todo);
+    // if (index != -1) {
+    //   this.todos.splice(index, 1);
+    //   return true;
+    // }
+    // return false;
   }
 
   /**
@@ -54,12 +57,12 @@ export class TodoService {
    * @returns void
    */
   logTodos() {
-    this.loggerService.logger(this.todos)
+    this.loggerService.logger(this.todos);
   }
 
   getTodosFromApi(): Observable<TodoDto[]> {
-    return this.http.get<TodoApiResponseDto>(APP_API.todoFakeApi).pipe(
-      map(response => response.todos)
-    )
+    return this.http
+      .get<TodoApiResponseDto>(APP_API.todoFakeApi)
+      .pipe(map((response) => response.todos));
   }
 }
