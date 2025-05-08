@@ -14,6 +14,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
 import { authGuard } from './auth/auth.guard';
+import { cvsResolverResolver } from './cv/resolver/cvs-resolver.resolver';
 
 export const routes: Routes = [
   {
@@ -21,7 +22,9 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: APP_ROUTES.login, component: LoginComponent },
-      { path: APP_ROUTES.cv, component: CvComponent },
+      { path: APP_ROUTES.cv, component: CvComponent, resolve: {
+        cvs: cvsResolverResolver
+      } },
       {
         path: APP_ROUTES.cv + '/add',
         component: AddCvComponent,

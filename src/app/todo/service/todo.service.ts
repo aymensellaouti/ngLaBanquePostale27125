@@ -1,4 +1,4 @@
-import { inject, Injectable, signal, WritableSignal } from "@angular/core";
+import { computed, inject, Injectable, Signal, signal, WritableSignal } from "@angular/core";
 import { Todo } from "../model/todo";
 import { LoggerService } from "src/app/services/logger.service";
 import { HttpClient } from "@angular/common/http";
@@ -20,8 +20,8 @@ export class TodoService {
    */
 
   loggerService = inject(LoggerService);
-  getTodos(): WritableSignal<Todo[]> {
-    return this.todos;
+  getTodos(): Signal<Todo[]> {
+    return computed(() => this.todos());
   }
 
   /**

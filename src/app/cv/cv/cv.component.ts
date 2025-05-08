@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Cv } from '../model/cv';
 import { SayHelloService } from 'src/app/services/say-hello.service';
 import { TodoService } from 'src/app/todo/service/todo.service';
@@ -30,7 +30,7 @@ export class CvComponent {
   cvService = inject(CvService);
   selectedCv$: Observable<Cv> = this.cvService.selectedCv$;
   selectedCv = this.cvService.selectedCv;
-  cvs: Cv[] = [];
+  @Input() cvs: Cv[] = [];
   todoService = inject(TodoService);
   // sayHelloService = new SayHelloService();
   toastr = inject(ToastrService);
@@ -40,12 +40,12 @@ export class CvComponent {
   constructor() {
     this.toastr.info('cc je suis le cvComponent :D');
     this.sayHelloService.hello();
-    this.cvService.getCvs().subscribe({
-      next: cvs => this.cvs = cvs,
-      error: (e) => {
-        this.cvs = this.cvService.getFakeCvs();
-        this.toastr.error(`LEs données sont fictives, merci de contacter l'admin`)
-      }
-    });
+    // this.cvService.getCvs().subscribe({
+    //   next: cvs => this.cvs = cvs,
+    //   error: (e) => {
+    //     this.cvs = this.cvService.getFakeCvs();
+    //     this.toastr.error(`LEs données sont fictives, merci de contacter l'admin`)
+    //   }
+    // });
   }
 }

@@ -2,7 +2,7 @@ import { AuthInterceptorProvider } from './app/auth/interceptors/auth.intercepto
 import { LoggerProviderToken } from './app/provider tokens/logger.token';
 import { LoggerService } from './app/services/logger.service';
 import { Logger2Service } from './app/services/logger2.service';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding, withDebugTracing } from '@angular/router';
 import { routes } from './app/app-routing.module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
@@ -14,8 +14,10 @@ import { importProvidersFrom } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, // required animations module
-        ToastrModule.forRoot()),
+        importProvidersFrom(
+          BrowserModule,
+          ToastrModule.forRoot()
+        ),
         AuthInterceptorProvider,
         {
             provide: LoggerProviderToken,
@@ -27,7 +29,11 @@ bootstrapApplication(AppComponent, {
             useClass: Logger2Service,
             multi: true,
         },
-        provideRouter(routes),
+        provideRouter(
+          routes,
+          withDebugTracing(),
+          withComponentInputBinding()
+        ),
         provideHttpClient(withInterceptorsFromDi()),
         provideAnimations(),
     ]

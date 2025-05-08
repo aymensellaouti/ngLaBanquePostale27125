@@ -4,10 +4,15 @@
                 <div class="card">
                     <div class="front">
                         <div class="cover">
+                          <ng-content #imgCover>
                             <img src="assets/images/rotating_card_thumb2.png">
+                          </ng-content>
+
                         </div>
                         <div class="user">
+                          <ng-content #imgUser>
                             <img class="img-circle" src="assets/images/{{path}}">
+                          </ng-content>
                         </div>
                         <div class="content">
                             <div class="main">
@@ -63,10 +68,10 @@
                 </div> <!-- end card -->
             </div>
   </div>
-  <div class="col-12 col-md-6">
+  <!-- <div class="col-12 col-md-6">
     <input type="text" [(ngModel)]="firstname" class="form-control">
     <input type="text" [(ngModel)]="name" class="form-control">
     <input type="text" [(ngModel)]="job" class="form-control">
     <input type="text" [(ngModel)]="path" class="form-control">
-  </div>
+  </div> -->
 </div>

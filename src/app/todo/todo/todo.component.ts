@@ -1,5 +1,5 @@
 import { Component, computed, inject, linkedSignal, signal, Signal } from "@angular/core";
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { TodoService } from "../service/todo.service";
 import { Todo } from "../model/todo";
 import { CvService } from "src/app/cv/services/cv.service";
@@ -43,6 +43,7 @@ export class TodoComponent {
     //     console.log({ todos });
     //   },
     // });
+    toSignal
   }
 
   addTodo() {
